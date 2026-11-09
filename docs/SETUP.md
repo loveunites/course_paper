@@ -4,28 +4,29 @@
 
 ## GA4
 
-- [ ] Создать отдельный ресурс «ФЕЙД КЛАБ — сайт», часовой пояс `GMT+03:00 Москва`, валюта — российский рубль.
-- [ ] Создать веб-поток для `https://fadeclub-demo.vercel.app`; включить Enhanced Measurement, включая взаимодействия с формами.
-- [ ] Установить Google tag с идентификатором `G-…` в `<head>` всех страниц, включая `404.html`.
+- [x] Проверить существующий ресурс «Барбершоп» и поток `G-7T85X5N107` в аккаунте проекта.
+- [x] Настроить Google tag с идентификатором `G-7T85X5N107` на всех страницах, включая `404.html`.
+- [x] В потоке включена Enhanced Measurement, включая взаимодействия с формами.
 - [ ] Проверить 20 событий из [events.md](events.md). `generate_lead` отправлять только после ответа приёмника `ok: true`; имена, телефоны и e-mail в GA4 не отправлять.
-- [ ] В Custom definitions зарегистрировать параметры уровня события `button_name`, `page_section`, `service_name`, `master_level`, `weekday`, `lead_service`, `messenger`.
-- [ ] Отметить ключевыми событиями только `generate_lead`, `contact_click` и `messenger_click`.
+- [x] В Custom definitions зарегистрированы параметры уровня события `button_name`, `page_section`, `service_name`, `master_level`, `weekday`, `lead_service`, `messenger`.
+- [x] Ключевыми событиями отмечены `generate_lead`, `contact_click` и `messenger_click`.
 - [ ] Проверить события и параметры в DebugView; сохранить снимки в `screens/ga4/`; перед сдачей выключить отладочный режим в опубликованном коде.
 - [ ] Заполнить идентификатор и ссылку ресурса в README, выдать Заказчику Viewer-доступ и указать адрес и дату.
 
 ## Vercel
 
 - [ ] Импортировать публичный GitHub-репозиторий проекта в Vercel; выбрать ветку `main` и публикацию статических файлов без сборки.
-- [ ] Подтвердить адрес проекта `https://fadeclub-demo.vercel.app` либо обновить README и ссылки реестра, если фактический адрес отличается.
+- [ ] Подтвердить адрес проекта `https://tz-09-barbershop-feyd-klab-seven.vercel.app` либо обновить README и ссылки реестра, если фактический адрес отличается.
 - [ ] Проверить главную, все страницы и `404.html` в опубликованной версии; убедиться, что push в `main` запускает новое развёртывание.
 - [ ] Убедиться, что секреты не добавлены в репозиторий. Идентификатор измерения GA4 не является секретом, но персональные данные посетителей в URL и аналитические события не включать.
 
 ## Google Sheets и приёмник заявок
 
-- [ ] Создать таблицу «FadeClub — Bookings» и лист `leads` с заголовками и порядком столбцов из раздела 6.1 ТЗ.
+- [x] Создать таблицу «FadeClub — Bookings» и лист `leads` с заголовками и порядком столбцов из раздела 6.1 ТЗ.
 - [ ] Для `status` настроить список `new`, `confirmed`, `reminded`, `visited`, `no_show`; добавить проверки и подсветку повторных `request_id` и незаполненных обязательных полей.
-- [ ] Развернуть приёмник как веб-приложение Apps Script. Проверить валидацию телефона, e-mail, списков, длины строк и повторного `request_id`; `created_at` и статус `new` задаёт сам приёмник.
-- [ ] Указать URL веб-приложения в форме проекта, отправить тестовую заявку и проверить все UTM-поля в таблице.
+- [x] Развернуть приёмник как веб-приложение Apps Script. Валидация телефона, e-mail, списков, длины строк и повторного `request_id`; `created_at` и статус `new` задаёт приёмник.
+- [x] Указать URL веб-приложения в форме проекта; включить UTM-поля и iframe-ответ.
+- [ ] Отправить тестовую заявку и проверить все UTM-поля в таблице.
 - [ ] Проверить повторную отправку одного `request_id`: дубликат не должен появиться. После успешной записи форма должна перейти на `thanks.html`.
 - [ ] Предоставить Заказчику доступ Viewer по адресу, указанному в ТЗ.
 
@@ -53,7 +54,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfgen import canvas
 
-url = "https://fadeclub-demo.vercel.app/contacts.html?utm_source=card_qr&utm_medium=qr&utm_campaign=repeat_visit_2026&utm_content=master_card"
+url = "https://tz-09-barbershop-feyd-klab-seven.vercel.app/contacts.html?utm_source=card_qr&utm_medium=qr&utm_campaign=repeat_visit_2026&utm_content=master_card"
 png_path = "docs/qr-u-12.png"
 pdf_path = "docs/afisha.pdf"
 

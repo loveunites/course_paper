@@ -11,6 +11,7 @@ Thumbs.db
 Desktop.ini
 .vercel/
 .playwright-cli/
+.playwright-mcp/
 .vscode/
 .idea/
 node_modules/
