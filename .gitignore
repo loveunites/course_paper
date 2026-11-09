@@ -1,0 +1,23 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local tooling and operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vercel/
+.playwright-cli/
+.vscode/
+.idea/
+node_modules/
+__pycache__/
+*.py[cod]
+
+# Temporary/editor files
+*.tmp
+*.bak
+*~
